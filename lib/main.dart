@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_tdd/core/res/colours.dart';
 import 'package:flutter_bloc_tdd/core/res/fonts.dart';
+import 'package:flutter_bloc_tdd/core/service/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: Fonts.poppins,
       ),
+      onGenerateRoute: generateRoute,
     );
   }
 }
