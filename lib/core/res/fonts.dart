@@ -1,4 +1,4 @@
 class Fonts {
-  static const mukta = 'Mukta';
+  static const aeonik = 'Aeonik';
   static const poppins = 'Poppins';
 }
