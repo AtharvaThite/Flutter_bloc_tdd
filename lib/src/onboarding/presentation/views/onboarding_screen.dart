@@ -35,7 +35,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         image: MediaRes.onBoardingBackground,
         child: BlocConsumer<OnboardingCubitCubit, OnboardingCubitState>(
           listener: (context, state) {
-            if (state is OnboardingStatus && state.isFirstTimer) {
+            if (state is OnboardingStatus && !state.isFirstTimer) {
               // Navigator.pushReplacementNamed(context, '/home');
             } else if (state is UserCached) {
               // TODO(User-Cache-Handler): Push to appropriate screen

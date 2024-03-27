@@ -1,11 +1,16 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc_tdd/core/res/colours.dart';
 import 'package:flutter_bloc_tdd/core/res/fonts.dart';
 import 'package:flutter_bloc_tdd/core/service/injection_container.dart';
 import 'package:flutter_bloc_tdd/core/service/router.dart';
+import 'package:flutter_bloc_tdd/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await init();
   runApp(const MyApp());
 }

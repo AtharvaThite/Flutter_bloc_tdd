@@ -19,7 +19,7 @@ class OnboardingBody extends StatelessWidget {
         Image.asset(
           pageContent.image,
           height: context.height * 0.4,
-          // width: context.width * 0.95,
+          width: context.width * 0.95,
         ),
         SizedBox(
           height: context.height * .03,

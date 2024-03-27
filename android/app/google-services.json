@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "352086089856",
+    "project_id": "education-app-a1783",
+    "storage_bucket": "education-app-a1783.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352086089856:android:59c9557b7b5593742e0665",
+        "android_client_info": {
+          "package_name": "com.example.flutter_bloc_tdd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOVD1bJieZHaV5wLeeGxvs7sqUBVyX3hI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
