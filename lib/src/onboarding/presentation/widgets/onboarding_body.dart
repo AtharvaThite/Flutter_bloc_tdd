@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_bloc_tdd/core/extensions/context_extension.dart';
 import 'package:flutter_bloc_tdd/core/res/colours.dart';
 import 'package:flutter_bloc_tdd/core/res/fonts.dart';
+import 'package:flutter_bloc_tdd/src/auth/presentation/views/sign_in_screen.dart';
 import 'package:flutter_bloc_tdd/src/onboarding/domain/entities/page_content.dart';
-import 'package:flutter_bloc_tdd/src/onboarding/presentation/cubit/onboarding_cubit_cubit.dart';
 
 class OnboardingBody extends StatelessWidget {
   const OnboardingBody({required this.pageContent, super.key});
@@ -54,7 +53,8 @@ class OnboardingBody extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   // TODO(Get-Started): Implement OnTap Functionality
-                  context.read<OnboardingCubitCubit>().cacheFirstTimer();
+                  // context.read<OnboardingCubitCubit>().cacheFirstTimer();
+                  Navigator.pushNamed(context, SignInScreen.routeName);
                 },
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
