@@ -20,6 +20,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final pageController = PageController();
+  int currentPageIndex = 0; // Track the current page index
 
   @override
   void initState() {
@@ -36,9 +37,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         child: BlocConsumer<OnboardingCubitCubit, OnboardingCubitState>(
           listener: (context, state) {
             if (state is OnboardingStatus && !state.isFirstTimer) {
-              // Navigator.pushReplacementNamed(context, '/home');
+              Navigator.pushReplacementNamed(context, '/home');
             } else if (state is UserCached) {
-              // TODO(User-Cache-Handler): Push to appropriate screen
+              Navigator.pushReplacementNamed(context, '/');
             }
           },
           builder: (context, state) {
@@ -76,6 +77,50 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                 ),
+
+                // Positioned(
+                //   bottom: 20,
+                //   right: 20,
+                //   child: ElevatedButton(
+                //     onPressed: () {
+                //       // if (currentPageIndex < 2) {
+                //       //   // Navigate to the next page
+                //       //   pageController.nextPage(
+                //       //     duration: const Duration(milliseconds: 500),
+                //       //     curve: Curves.easeInOut,
+                //       //   );
+                //       // } else {
+                //       //   // Handle the action for the last page
+                //       //   // For example, navigate to the home screen
+                //       //   Navigator.pushReplacementNamed(context, '/home');
+                //       // }
+
+                //       pageController.nextPage(
+                //         duration: const Duration(milliseconds: 500),
+                //         curve: Curves.easeInOut,
+                //       );
+                //       if (pageController.page == 2) {
+                //         CoreUtils.showSnackBar(context, 'This is last page');
+                //       }
+                //       setState(() {});
+                //     },
+                //     style: ElevatedButton.styleFrom(
+                //       padding: const EdgeInsets.symmetric(
+                //         horizontal: 20,
+                //         vertical: 10,
+                //       ),
+                //       backgroundColor: Colours.primaryColor,
+                //       foregroundColor: Colors.white,
+                //     ),
+                //     child: Text(
+                //       pageController.page == 2 ? 'Get Started' : 'Next',
+                //       style: const TextStyle(
+                //         fontFamily: Fonts.aeonik,
+                //         fontWeight: FontWeight.bold,
+                //       ),
+                //     ),
+                //   ),
+                // ),
               ],
             );
           },
