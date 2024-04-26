@@ -25,17 +25,18 @@ class LocalUserModel extends LocalUser {
 
   LocalUserModel.fromMap(DataMap map)
       : super(
-          uid: map['uid'] as String,
-          email: map['email'] as String,
-          points: (map['points'] as num).toInt(),
-          fullName: map['fullName'] as String,
-          profilePic: map['profilePic'] as String,
-          bio: map['bio'] as String,
-          groupIds: (map['groupIds'] as List<dynamic>).cast<String>(),
+          uid: map['uid'] as String? ?? '',
+          email: map['email'] as String? ?? '',
+          points: (map['points'] as num?)?.toInt() ?? 0,
+          fullName: map['fullName'] as String? ?? '',
+          profilePic: map['profilePic'] as String? ?? '',
+          bio: map['bio'] as String? ?? '',
+          groupIds: (map['groupIds'] as List<dynamic>?)?.cast<String>() ?? [],
           enrolledCourseIds:
-              (map['enrolledCourseIds'] as List<dynamic>).cast<String>(),
-          followers: (map['followers'] as List<dynamic>).cast<String>(),
-          following: (map['following'] as List<dynamic>).cast<String>(),
+              (map['enrolledCourseIds'] as List<dynamic>?)?.cast<String>() ??
+                  [],
+          followers: (map['followers'] as List<dynamic>?)?.cast<String>() ?? [],
+          following: (map['following'] as List<dynamic>?)?.cast<String>() ?? [],
         );
 
   DataMap toMap() {
